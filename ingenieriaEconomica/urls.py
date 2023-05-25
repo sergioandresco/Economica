@@ -20,5 +20,5 @@ from graficas import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('graficas/', views.graficas, name='graficas'),
+    path('', views.graficas, name='graficas'),
 ]
