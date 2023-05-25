@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gráficas de Inflación</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    
+</head>
+<body>
+  <h1>Inflación de Productos</h1>
+  <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Cargar CSV">
+    </form>
+
+    {% if plot_div %}
+    <h2>Gráfico de Inflación de Productos</h2>
+    <div class="plot-container">
+        {{ plot_div|safe }}
+    </div>
+    {% endif %}
+
+    {% if plot_div2 %}
+    <h2>Tasa de Inflación Anual</h2>
+    <div class="plot-container">
+        {{ plot_div2|safe }}
+    </div>
+    {% endif %}
+
+    {% if plot_div3 %}
+    <h2>Proyecciones de Costos Futuros</h2>
+    <div class="plot-container">
+        {{ plot_div3|safe }}
+    </div>
+    {% endif %}
+
+    {% if plot_div4 %}
+    <h2>Comparación de Rendimientos de Inversión</h2>
+    <div class="plot-container">
+        {{ plot_div4|safe }}
+    </div>
+    {% endif %}
+
+    {% if plot_div5 %}
+    <h2>Contribución de Factores en la Inflación</h2>
+    <div class="plot-container">
+        {{ plot_div5|safe }}
+    </div>
+    {% endif %}
+</body>
+</html>
